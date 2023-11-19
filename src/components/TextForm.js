@@ -46,61 +46,63 @@ export default function TextForm(props) {
         <h1>{props.heading}</h1>
         <div>
           <button
-            className={`btn btn-light ${isBold ? "btn-outline-primary" : ""}`}
+            className={`btn btn-${props.mode === "dark" ? "dark" : "light"} ${
+              isBold ? "btn-outline-primary" : ""
+            }`}
             onClick={bold}
           >
             <i class="ri-bold fontbold"></i>
           </button>
 
           <button
-            className={`btn btn-light m-1 ${
-              isItalic ? "btn-outline-primary" : ""
-            }`}
+            className={`btn btn-${
+              props.mode === "dark" ? "dark" : "light"
+            } m-1 ${isItalic ? "btn-outline-primary" : ""}`}
             onClick={italic}
           >
             <i class="ri-italic fontbold"></i>
           </button>
 
           <button
-            className={`btn btn-light m-1 ${
-              isUnderline ? "btn-outline-primary" : ""
-            }`}
+            className={`btn btn-${
+              props.mode === "dark" ? "dark" : "light"
+            } m-1 ${isUnderline ? "btn-outline-primary" : ""}`}
             onClick={underline}
           >
             <i class="ri-underline fontbold"></i>
           </button>
 
           <button
-            className={`btn btn-light m-1 ${
-              isLeft ? "btn-outline-primary" : ""
-            }`}
+            className={`btn btn-${
+              props.mode === "dark" ? "dark" : "light"
+            } m-1 ${isLeft ? "btn-outline-primary" : ""}`}
             onClick={leftAlign}
           >
             <i class="ri-align-left fontbold"></i>
           </button>
 
           <button
-            className={`btn btn-light m-1 ${
-              isCenter ? "btn-outline-primary" : ""
-            }`}
+            className={`btn btn-${
+              props.mode === "dark" ? "dark" : "light"
+            } m-1 ${isCenter ? "btn-outline-primary" : ""}`}
             onClick={centerAlign}
           >
             <i class="ri-align-center fontbold"></i>
           </button>
 
           <button
-            className={`btn btn-light m-1 ${
-              isRight ? "btn-outline-primary" : ""
-            }`}
+            className={`btn btn-${
+              props.mode === "dark" ? "dark" : "light"
+            } m-1 ${isRight ? "btn-outline-primary" : ""}`}
             onClick={rightAlign}
           >
             <i class="ri-align-right fontbold"></i>
           </button>
 
           <button
-            className={`btn btn-light m-1 ${
-              isJustified ? "btn-outline-primary" : ""
-            }`}
+            className={`btn btn-${
+              props.mode === "dark" ? "dark" : "light"
+            } m-1 ${isJustified ? "btn-outline-primary" : ""}`}
             onClick={justify}
           >
             <i class="ri-align-justify fontbold"></i>
@@ -126,6 +128,10 @@ export default function TextForm(props) {
                 : isJustified
                 ? "justify"
                 : "left",
+              backgroundColor: `${
+                props.mode === "light" ? "white" : "#131313"
+              }`,
+              color: `${props.mode === "light" ? "#131313" : "white"}`,
             }}
           ></textarea>
         </div>
