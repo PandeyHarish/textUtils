@@ -2,6 +2,9 @@ import { useState } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
+import About from "./components/About";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 
 function App() {
   const [mode, setMode] = useState("light");
@@ -18,16 +21,23 @@ function App() {
   };
   return (
     <>
-      <Navbar
-        title="Text Utils"
-        tab1="Home"
-        tab2="About"
-        mode={mode}
-        changeTheme={changeTheme}
-      />
-      <div className="container">
-        <TextForm heading="Enter your text below" mode={mode} />
-      </div>
+      <BrowserRouter>
+        <Navbar
+          title="Text Utils"
+          tab1="Home"
+          tab2="About"
+          mode={mode}
+          changeTheme={changeTheme}
+        />
+        <Routes>
+          <Route
+            exact
+            path="/"
+            element={<TextForm heading="Enter your text below" mode={mode} />}
+          />
+          <Route exact path="/about" element={<About />}/>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
