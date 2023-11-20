@@ -51,7 +51,7 @@ export default function TextForm(props) {
             }`}
             onClick={bold}
           >
-            <i class="ri-bold fontbold"></i>
+            <i className="ri-bold fontbold"></i>
           </button>
 
           <button
@@ -60,7 +60,7 @@ export default function TextForm(props) {
             } m-1 ${isItalic ? "btn-outline-primary" : ""}`}
             onClick={italic}
           >
-            <i class="ri-italic fontbold"></i>
+            <i className="ri-italic fontbold"></i>
           </button>
 
           <button
@@ -69,7 +69,7 @@ export default function TextForm(props) {
             } m-1 ${isUnderline ? "btn-outline-primary" : ""}`}
             onClick={underline}
           >
-            <i class="ri-underline fontbold"></i>
+            <i className="ri-underline fontbold"></i>
           </button>
 
           <button
@@ -78,7 +78,7 @@ export default function TextForm(props) {
             } m-1 ${isLeft ? "btn-outline-primary" : ""}`}
             onClick={leftAlign}
           >
-            <i class="ri-align-left fontbold"></i>
+            <i className="ri-align-left fontbold"></i>
           </button>
 
           <button
@@ -87,7 +87,7 @@ export default function TextForm(props) {
             } m-1 ${isCenter ? "btn-outline-primary" : ""}`}
             onClick={centerAlign}
           >
-            <i class="ri-align-center fontbold"></i>
+            <i className="ri-align-center fontbold"></i>
           </button>
 
           <button
@@ -96,7 +96,7 @@ export default function TextForm(props) {
             } m-1 ${isRight ? "btn-outline-primary" : ""}`}
             onClick={rightAlign}
           >
-            <i class="ri-align-right fontbold"></i>
+            <i className="ri-align-right fontbold"></i>
           </button>
 
           <button
@@ -105,7 +105,7 @@ export default function TextForm(props) {
             } m-1 ${isJustified ? "btn-outline-primary" : ""}`}
             onClick={justify}
           >
-            <i class="ri-align-justify fontbold"></i>
+            <i className="ri-align-justify fontbold"></i>
           </button>
         </div>
         <div className="input-group mt-4">
@@ -142,7 +142,7 @@ export default function TextForm(props) {
       <div className="container">
         <h1>Text Summary</h1>
         <p>
-          <span className="fontbold">{text.split(" ").length}</span> words and{" "}
+          <span className="fontbold">{text.split(" ").filter((element)=>{return element.length !== 0}).length}</span> words and{" "}
           <span className="fontbold">{text.length}</span> characters
         </p>
       </div>
