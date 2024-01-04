@@ -142,7 +142,7 @@ export default function TextForm(props) {
       <div className="container">
         <h1>Text Summary</h1>
         <p>
-          <span className="fontbold">{text.split(" ").filter((element)=>{return element.length !== 0}).length}</span> words and{" "}
+          <span className="fontbold">{text.split(/\S+/).filter((element)=>{return element.length !== 0}).length}</span> words and{" "}
           <span className="fontbold">{text.length}</span> characters
         </p>
       </div>
